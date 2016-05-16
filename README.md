@@ -16,7 +16,7 @@ Callback function feature lets you know when the modal has been dismissed and wh
 == Installation and usage ==
 
 See the boot-modal-alerts.html file for fully working samples or go to:
-http://localhost/ruby/boot-modal-alerts/demo/boot-modal-alerts.html for a demo
+http://yolobits.com/bootstrap-modal-alerts/demo/boot-modal-alerts.html for a demo
 
 1. include alert-modal.css or alert-modal.min.css into your page
 2. include alert-modal.js or alert-modal.min.js into your page
