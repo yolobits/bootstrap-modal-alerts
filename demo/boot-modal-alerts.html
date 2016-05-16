@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bootstrap Style Modal Alerts Example</title>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/alert-modal.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="../js/alert-modal.min.js"></script>
+</head>
+
+<body style="padding:20px">
+  <div id="theAlertModal" class="alert-modal"></div>
+
+  <h2>Bootstrap Styled Modal Alerts</h2>
+  by John Klein / <a href="www.yolobits.com" target="_blank">YoloBits.com</a>
+  <h4>Examples</h4>
+
+  <button id="btnSuccess">Show Success Alert</button>
+  <button id="btnInfo">Show Info Alert</button>
+  <button id="btnWarning">Show Warning Alert</button>
+  <button id="btnDanger">Show Danger Alert</button>
+  <button id="btnDialog">Show Dialog with Buttons</button>
+
+  <div id="theAlertModal" class="alert-modal"></div>
+
+</body>
+
+
+<script>
+$(function() {
+
+  var tam = $('theAlertModal').AlertModal();
+
+  $('#btnSuccess').click(function() {
+    var myObj = { aNumber: 100, aString: "A string in my object" };
+    var myTags = { tag1 : "some string", obj2: myObj };
+
+    tam.show({
+      alert_class:  "alert-modal-success",
+      content:      { html: "This is the Success Modal" },
+      tags :        myTags,
+      dismiss_callback: function(btn_name, tags) {
+        alert("Success Modal Callback - Button Pressed:"+btn_name+", Tags passed:"+tags.tag1+" and "+tags.obj2.aString)
+      }
+    });
+  });
+
+  $('#btnDialog').click(function() {
+    var myTags = { tag1: "a string from myTags", tag2: "another string"};
+
+    tam.show({
+      alert_class:  "alert-modal-dialog",
+      content:      { html: "Are you sure you want to take that action?", classname: "text-center" },
+      buttons:      { ok_button: "Yes", cancel_button: "No" },
+      tags:         myTags,
+      dismiss_callback: function(btn_name, tags) {
+        alert("Modal Dialog Callback - Button Pressed:"+btn_name+", Tags passed:"+tags.tag1)
+      }
+    });
+  });
+
+  $('#btnInfo').click(function() {
+    tam.show({
+      alert_class:  "alert-modal-info",
+      content:      { html: "This is the Information modal" }
+    });
+  });
+
+  $('#btnWarning').click(function() {
+    tam.show({
+      alert_class:  "alert-modal-warning",
+      content:      { html: "This is the Warning modal" }
+    });
+  });
+
+  $('#btnDanger').click(function() {
+    tam.show({
+      alert_class:  "alert-modal-danger",
+      content:      { html: "This is the Danger modal" }
+    });
+  });
+
+});
+</script>
+</html>
