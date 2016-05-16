@@ -14,9 +14,11 @@ Also supports a single or two button dialog that can be used for Confirmation di
 Callback function feature lets you know when the modal has been dismissed and what button was used to dismiss the dialog.  Pass data to the dialog and have it returned to you in the callback.
 
 == Installation and usage ==
+The plugin overview and a description of many of the features go to:
+http://yolobits.com/bootstrap-modal-alerts/
 
 See the boot-modal-alerts.html file for fully working samples or go to:
-http://yolobits.com/bootstrap-modal-alerts/demo/boot-modal-alerts.html for a demo
+http://yolobits.com/bootstrap-modal-alert/demo/boot-modal-alerts.html for a demo
 
 1. include alert-modal.css or alert-modal.min.css into your page
 2. include alert-modal.js or alert-modal.min.js into your page
